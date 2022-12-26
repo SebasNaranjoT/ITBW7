@@ -17,8 +17,9 @@ func (p Product) Save() {
 }
 
 func (p Product) GetAll() {
+
 	for _, product := range Products {
-		fmt.Println(product)
+		fmt.Printf("%+v\n", product)
 	}
 }
 
@@ -52,6 +53,7 @@ func main() {
 	}
 	producto2.Save()
 	producto1.Save()
-	producto1.GetAll()
-	fmt.Println(producto1.GetById(123))
+	Product.GetAll(Product{})
+	//producto1.GetAll()
+	fmt.Printf("%+v\n", Product.GetById(Product{}, 123))
 }
